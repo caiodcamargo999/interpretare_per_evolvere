@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+
+# Local build artifacts (Vercel will build automatically)
+dist/
+
+# OS and temporary files
+.DS_Store
+*.log
+scratch_*
+*.pyc
+__pycache__/
+EOF

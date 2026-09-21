@@ -73,7 +73,9 @@ index_html = """<!DOCTYPE html>
     />
     <meta name="description" content="Scarica tutti i materiali didattici del Kit Interpretare per Evolvere in formato PDF." />
     <meta name="theme-color" content="#887396" />
-    <link rel="shortcut icon" type="image/png" href="/images/ohKEGR8721831.png" />
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.png" />
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
   <body class="atomicat-disable-selection">

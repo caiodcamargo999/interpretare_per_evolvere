@@ -378,7 +378,6 @@ a, button, [role='button'], .a-btn, .a-ac-t {
 }
 
 
-
 /* =================================================== */
 /* LUXURY & SOPHISTICATED MODERN DESIGN SYSTEM 2026 */
 /* =================================================== */
@@ -400,7 +399,7 @@ h1, h2, h3, h4, .atomicat-title {
 
 /* Offset for smooth scrolling to offer */
 #offerta, .atomicat-container-4868b0f {
-  scroll-margin-top: 40px;
+  scroll-margin-top: 30px;
 }
 
 /* -------------------------------------------
@@ -467,16 +466,20 @@ h1, h2, h3, h4, .atomicat-title {
 }
 
 /* -------------------------------------------
-   LUXURY CARD & OFFER CONTAINER ELEVATION
+   OFFERTA SECTION - HIGH CONTRAST & LUXURY
 ------------------------------------------- */
 #offerta, 
 .atomicat-container-4868b0f {
-  border-radius: 28px !important;
-  background: linear-gradient(150deg, #090e1a 0%, #151d36 100%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.6), 0 0 40px rgba(56, 189, 248, 0.08) !important;
+  background: radial-gradient(circle at 50% 0%, #1e295d 0%, #0c1229 60%, #060913 100%) !important;
+  border: 1.5px solid rgba(56, 189, 248, 0.25) !important;
+  border-radius: 32px !important;
+  box-shadow: 0 30px 80px -15px rgba(0, 0, 0, 0.8), 0 0 50px rgba(56, 189, 248, 0.12) !important;
+  padding: 50px 35px !important;
+  margin-top: 45px !important;
+  margin-bottom: 45px !important;
   position: relative !important;
   overflow: hidden !important;
+  color: #ffffff !important;
 }
 
 #offerta::before {
@@ -485,11 +488,150 @@ h1, h2, h3, h4, .atomicat-title {
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
+  height: 4px;
   background: linear-gradient(90deg, #38bdf8 0%, #10b981 50%, #f59e0b 100%);
   pointer-events: none;
 }
 
+/* Headline inside offer */
+#offerta .atomicat-heading-title-3ec6468,
+#offerta .atomicat-text-3ec6468,
+#offerta .atomicat-heading-title-3ec6468 * {
+  color: #ffffff !important;
+  font-size: 1.45rem !important;
+  font-weight: 700 !important;
+  line-height: 1.55 !important;
+  text-align: center !important;
+}
+
+/* 3D Mockup inside offer */
+#offerta .atomicat-element-container-62a91ff img,
+#offerta .a-img-ele-62a91ff img {
+  max-width: 100% !important;
+  height: auto !important;
+  background: transparent !important;
+  filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.7)) !important;
+  transition: transform 0.4s ease !important;
+}
+
+#offerta .atomicat-element-container-62a91ff img:hover,
+#offerta .a-img-ele-62a91ff img:hover {
+  transform: translateY(-4px) scale(1.02) !important;
+}
+
+/* Item breakdown list container */
+#offerta .atomicat-container-1f5bdec {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  margin: 25px 0 !important;
+}
+
+/* Each item in offer list */
+#offerta .a-c-cont-79e3499,
+#offerta .a-c-cont-fb79da7,
+#offerta .a-c-cont-5733e0c,
+#offerta .a-c-cont-bd2ac2e,
+#offerta .a-c-cont-78b58c6 {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 14px !important;
+  padding: 14px 20px !important;
+  transition: all 0.25s ease !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+#offerta .a-c-cont-79e3499:hover,
+#offerta .a-c-cont-fb79da7:hover,
+#offerta .a-c-cont-5733e0c:hover,
+#offerta .a-c-cont-bd2ac2e:hover,
+#offerta .a-c-cont-78b58c6:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(56, 189, 248, 0.4) !important;
+  transform: translateX(4px) !important;
+}
+
+#offerta .atomicat-heading-title-79e3499,
+#offerta .atomicat-heading-title-fb79da7,
+#offerta .atomicat-heading-title-5733e0c,
+#offerta .atomicat-heading-title-bd2ac2e,
+#offerta .atomicat-heading-title-78b58c6 {
+  color: #f8fafc !important;
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+}
+
+#offerta .atomicat-heading-title-79e3499 *,
+#offerta .atomicat-heading-title-fb79da7 *,
+#offerta .atomicat-heading-title-5733e0c *,
+#offerta .atomicat-heading-title-bd2ac2e *,
+#offerta .atomicat-heading-title-78b58c6 * {
+  color: #f8fafc !important;
+}
+
+/* Strikethrough value tags */
+#offerta s, 
+#offerta s * {
+  color: #f87171 !important;
+  text-decoration: line-through !important;
+  font-weight: 700 !important;
+  margin-left: 6px !important;
+}
+
+/* Total Value Heading */
+#offerta .atomicat-heading-title-a67ff93,
+#offerta .atomicat-text-a67ff93,
+#offerta .atomicat-heading-title-a67ff93 * {
+  color: #cbd5e1 !important;
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+  text-align: center !important;
+  margin-top: 15px !important;
+}
+
+/* Big Price: €27,00 */
+#offerta .atomicat-heading-title-3e7a759,
+#offerta .atomicat-text-3e7a759,
+#offerta .atomicat-heading-title-3e7a759 * {
+  color: #22c55e !important;
+  font-size: 4rem !important;
+  font-weight: 900 !important;
+  text-align: center !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.05 !important;
+  text-shadow: 0 4px 25px rgba(34, 197, 94, 0.45) !important;
+  font-family: 'Outfit', sans-serif !important;
+}
+
+/* Promo text: Risparmi €164 */
+#offerta .atomicat-heading-title-fcc1184,
+#offerta .atomicat-text-fcc1184,
+#offerta .atomicat-heading-title-fcc1184 * {
+  color: #cbd5e1 !important;
+  font-size: 1.08rem !important;
+  line-height: 1.6 !important;
+  text-align: center !important;
+  max-width: 650px !important;
+  margin: 10px auto 25px auto !important;
+}
+
+/* Offer Button */
+#offerta .atomicat-checkout-button {
+  font-size: 1.25rem !important;
+  padding: 22px 36px !important;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 12px 30px -5px rgba(16, 185, 129, 0.5), 0 0 25px rgba(16, 185, 129, 0.3) !important;
+}
+
+#offerta .atomicat-checkout-button:hover {
+  background: linear-gradient(135deg, #34d399 0%, #059669 100%) !important;
+  box-shadow: 0 18px 40px -5px rgba(16, 185, 129, 0.65), 0 0 35px rgba(16, 185, 129, 0.45) !important;
+}
+
+/* -------------------------------------------
+   OTHER SECTIONS: CARDS & TESTIMONIALS
+------------------------------------------- */
 /* Two Paths Container Cards */
 .atomicat-container-1502162, 
 .atomicat-container-0234c9c {
@@ -570,20 +712,48 @@ h1, h2, h3, h4, .atomicat-title {
 }
 
 /* -------------------------------------------
-   RESPONSIVENESS & POLISH
+   100% MOBILE RESPONSIVENESS
 ------------------------------------------- */
 @media (max-width: 768px) {
+  #offerta, 
+  .atomicat-container-4868b0f {
+    padding: 35px 18px !important;
+    border-radius: 22px !important;
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+  }
+  
+  #offerta .atomicat-heading-title-3ec6468,
+  #offerta .atomicat-text-3ec6468,
+  #offerta .atomicat-heading-title-3ec6468 * {
+    font-size: 1.2rem !important;
+  }
+  
+  #offerta .atomicat-heading-title-3e7a759,
+  #offerta .atomicat-text-3e7a759,
+  #offerta .atomicat-heading-title-3e7a759 * {
+    font-size: 3.2rem !important;
+  }
+  
+  #offerta .atomicat-heading-title-79e3499,
+  #offerta .atomicat-heading-title-fb79da7,
+  #offerta .atomicat-heading-title-5733e0c,
+  #offerta .atomicat-heading-title-bd2ac2e,
+  #offerta .atomicat-heading-title-78b58c6 {
+    font-size: 0.95rem !important;
+  }
+  
   .a-btn, 
   .atomicat-checkout-button, 
   .atomicat-anchor-button {
     font-size: 0.95rem !important;
     padding: 16px 20px !important;
     width: 100% !important;
+    box-sizing: border-box !important;
   }
   
-  #offerta, 
-  .atomicat-container-4868b0f {
-    border-radius: 20px !important;
-    padding: 15px !important;
+  img {
+    max-width: 100% !important;
+    height: auto !important;
   }
 }

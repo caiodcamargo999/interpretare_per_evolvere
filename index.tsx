@@ -44,9 +44,12 @@ export default function KitInterpretarParaEvoluir() {
         const href = target.getAttribute('href');
         if (href && href.startsWith('#')) {
           e.preventDefault();
-          const elem = document.querySelector(href);
+          const targetId = href.substring(1);
+          const elem = document.getElementById(targetId) || document.querySelector(href);
           if (elem) {
-            elem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            const yOffset = -24;
+            const y = elem.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
           }
         }
       }
@@ -54,7 +57,7 @@ export default function KitInterpretarParaEvoluir() {
     document.addEventListener('click', handleAnchorClick);
 
     // Propagate UTM query parameters to checkout links
-    if (typeof window!== 'undefined') {
+    if (typeof window !== 'undefined') {
       const searchParams = window.location.search;
       if (searchParams) {
         const checkoutLinks = document.querySelectorAll<HTMLAnchorElement>('.atomicat-checkout-button');
@@ -148,6 +151,6 @@ export default function KitInterpretarParaEvoluir() {
                     </div>
                   );
                 })}
-              </div></div></div></div></div></div></div></div></div><div className="a-b-o-cont a-s-d-51j83h atomicat-hidden-tablet atomicat-container-347eb00 atomicat-hidden-desktop"><div className="a-o-cont a-s-d-j439w8 a-cont-b"><div className="a-i-cont a-cont"><div className="a-c-cont a-r a-s-d-doxsx0 a-c-cont-b5c3c9d"><div className="a-r atomicat-button a-s-d-6gq4re a-btn-b5c3c9d atomicat-element-container-b5c3c9d a-btn a-e-cont a-f-c">{/*  button - ii6k5d  */}<a href="https://www.paggins.com/checkout/378673e6-08ae-42ff-a6f5-c71c3dd91454" className="a-b-a a-btn atomicat-checkout-button"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" className="svg-inline--fa fa-arrow-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg><span>ACQUISTA ORA IL KIT COMPLETO · €27</span></a></div></div></div></div></div></div>
+              </div></div></div></div></div></div></div></div></div></div>
   );
 }

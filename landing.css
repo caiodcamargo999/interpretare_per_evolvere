@@ -278,13 +278,17 @@
 
 .a-ac-8befee0 .atomicat-content{color:#363636;background:#fff;font-family:Poppins,sans-serif;font-size:16px;line-height:1.6em}@media screen and (max-width:480px){.a-ac-8befee0 .atomicat-content{font-size:15px}}.a-ac-8befee0 .atomicat-content .a-c-text{color:#363636;font-family:Poppins,sans-serif}.a-ac-8befee0 .a-ac-t{color:#363636;background:#fff;font-family:Poppins,sans-serif;font-size:18px;font-weight:600;line-height:1.4em}@media screen and (max-width:480px){.a-ac-8befee0 .a-ac-t{font-size:16px}}.a-ac-8befee0 .a-ac-t-active{color:#887396;background:#f4f0f5}.a-ac-8befee0 .a-ac-c .a-ac-i{background:#fff;border-top-left-radius:12px;border-top-right-radius:12px;border-bottom-right-radius:12px;border-bottom-left-radius:12px;box-shadow:0 2px 10px 0 rgba(0,0,0,.06);border-style:solid;border-top-width:1px;border-right-width:1px;border-bottom-width:1px;border-left-width:1px}.a-ac-8befee0 .a-ac-tg svg{color:#887396;height:16px}.a-c-cont.a-c-cont-8befee0{width:100%}.a-c-cont-8befee0>.a-e-cont .a-i-e-cont{gap:12px}@media screen and (max-width:480px){.a-c-cont-8befee0>.a-e-cont .a-i-e-cont{gap:10px}}.a-c-cont-8befee0>.a-e-cont{gap:12px}@media screen and (max-width:480px){.a-c-cont-8befee0>.a-e-cont{gap:10px}}
 
-@media screen and (max-width:480px){.atomicat-container-347eb00>.a-o-cont{padding-top:8px;padding-right:10px;padding-bottom:10px;padding-left:10px}}@media screen and (max-width:480px){.atomicat-container-347eb00>.a-o-cont>.a-cont{align-items:stretch;flex-direction:column}}.a-b-cont .atomicat-container-347eb00.a-b-o-cont{position:fixed;bottom:0;left:0;z-index:9999;box-shadow:0 -4px 16px 0 rgba(0,0,0,.18);background-size:cover;background-repeat:no-repeat;background-position:center}@media screen and (max-width:480px){.a-b-cont .atomicat-container-347eb00.a-b-o-cont{background:#fff}}
-
-.a-btn-b5c3c9d.a-e-cont .a-btn{font-family:Poppins,sans-serif;text-transform:uppercase;color:#fff;background:#00a1e6}@media screen and (max-width:480px){.a-btn-b5c3c9d.a-e-cont .a-btn{font-size:17px;font-weight:700;align-self:stretch;width:100%;padding-top:14px;padding-bottom:14px;border-top-left-radius:12px;border-top-right-radius:12px;border-bottom-right-radius:12px;border-bottom-left-radius:12px}}
-
+/* Fixed bottom button completely disabled as requested */
+.atomicat-container-347eb00,
+.a-b-cont .atomicat-container-347eb00.a-b-o-cont {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  pointer-events: none !important;
+}
 
 /* ===================================================
-   IPHONE & IOS SAFARI ENHANCEMENTS
+   IPHONE & MOBILE OPTIMIZATIONS
    =================================================== */
 html, body {
   width: 100%;
@@ -309,55 +313,21 @@ a, button, [role='button'], .a-btn, .a-ac-t {
   transition: transform 0.1s ease;
 }
 
-/* Responsive iPhone adjustments */
-@media screen and (max-width: 480px) {
-  /* Prevent sticky bar from covering content */
+@media screen and (max-width: 768px) {
   .a-b-cont {
-    padding-bottom: calc(85px + env(safe-area-inset-bottom, 12px)) !important;
+    padding-bottom: 30px !important;
   }
 
-  /* Sticky Footer for iPhone Notch & Home Indicator */
-  .a-b-cont .atomicat-container-347eb00.a-b-o-cont {
-    position: fixed !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    width: 100% !important;
-    z-index: 99999 !important;
-    background: rgba(255, 255, 255, 0.98) !important;
-    backdrop-filter: blur(10px) !important;
-    -webkit-backdrop-filter: blur(10px) !important;
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15) !important;
-    padding-bottom: max(10px, env(safe-area-inset-bottom, 12px)) !important;
-    border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
-  }
-
-  .atomicat-container-347eb00 > .a-o-cont {
-    padding-top: 8px !important;
-    padding-right: 14px !important;
-    padding-bottom: 6px !important;
-    padding-left: 14px !important;
-  }
-
-  .a-btn-b5c3c9d.a-e-cont .a-btn {
-    font-size: 16px !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.5px !important;
-    padding: 14px 20px !important;
-    border-radius: 12px !important;
-    box-shadow: 0 4px 12px rgba(0, 161, 230, 0.35) !important;
-  }
-
-  /* Ensure comparison cards and images fit iPhone screens gracefully */
+  /* Ensure comparison cards and images fit mobile screens gracefully */
   .a-b-cont .atomicat-container-c5209a5.a-b-o-cont,
   .a-b-cont .atomicat-container-d3d617b.a-b-o-cont {
     width: 100% !important;
-    border-radius: 16px !important;
+    border-radius: 18px !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
 
-  .a-img-ele-eb3fee05 img,
+  .a-img-ele-eb3fee0 img,
   .a-img-ele-dc4fa02 img {
     width: 100% !important;
     height: auto !important;
@@ -365,15 +335,15 @@ a, button, [role='button'], .a-btn, .a-ac-t {
     display: block !important;
   }
 
-  /* Better spacing on iPhone */
+  /* Harmonious symmetrical padding on mobile */
   .atomicat-container-c49effb > .a-o-cont {
-    padding-left: 12px !important;
-    padding-right: 12px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
   }
 
   .atomicat-container-2112268 > .a-o-cont {
-    padding-left: 12px !important;
-    padding-right: 12px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
   }
 }
 
@@ -712,27 +682,236 @@ h1, h2, h3, h4, .atomicat-title {
 }
 
 /* -------------------------------------------
-   100% MOBILE RESPONSIVENESS
+   HARMONIOUS MOBILE UI/UX & RESPONSIVENESS (2026)
 ------------------------------------------- */
 @media (max-width: 768px) {
+  /* Global Container Spacing */
+  .a-o-cont {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  .a-cont-b > .a-cont,
+  .a-cont-f-w > .a-cont {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100% !important;
+  }
+
+  /* Mobile Hero */
+  .a-c-cont-c509ab5 {
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  .a-c-cont-c509ab5 > .a-e-cont {
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+  }
+
+  .a-img-ele-c509ab5 img {
+    border-radius: 18px !important;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.12) !important;
+    max-width: 100% !important;
+  }
+
+  /* Comparison Cards */
+  .atomicat-container-c49effb > .a-o-cont > .a-cont {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  .a-b-cont .atomicat-container-c5209a5.a-b-o-cont {
+    width: 100% !important;
+    background: #ffffff !important;
+    border: 2px solid #e2e8f0 !important;
+    border-radius: 20px !important;
+    padding: 16px !important;
+    box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.06) !important;
+    margin: 0 0 14px 0 !important;
+  }
+
+  .a-b-cont .atomicat-container-d3d617b.a-b-o-cont {
+    width: 100% !important;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%) !important;
+    border: 2px solid #38bdf8 !important;
+    border-radius: 20px !important;
+    padding: 16px !important;
+    box-shadow: 0 12px 30px -5px rgba(15, 23, 42, 0.35) !important;
+    margin: 0 !important;
+  }
+
+  .atomicat-heading-title-0e97bb4 h3 {
+    font-size: 1.15rem !important;
+    line-height: 1.35 !important;
+    color: #475569 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .atomicat-heading-title-3860c55 h3 {
+    font-size: 1.15rem !important;
+    line-height: 1.35 !important;
+    color: #f8fafc !important;
+    margin-bottom: 12px !important;
+  }
+
+  /* Top & Secondary CTA Buttons */
+  .a-btn, 
+  .atomicat-checkout-button, 
+  .atomicat-anchor-button {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 0.96rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.03em !important;
+    padding: 18px 20px !important;
+    min-height: 56px !important;
+    width: 100% !important;
+    border-radius: 50px !important;
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
+    color: #ffffff !important;
+    box-shadow: 0 8px 25px -4px rgba(2, 132, 199, 0.45) !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .a-btn-e634791.a-e-cont .a-btn,
+  .a-btn-8e2ac92.a-e-cont .a-btn {
+    width: 100% !important;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+    box-shadow: 0 10px 25px -4px rgba(16, 185, 129, 0.45) !important;
+  }
+
+  .a-btn svg,
+  .atomicat-checkout-button svg,
+  .atomicat-anchor-button svg {
+    margin-left: 8px !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Subtitles under buttons */
+  .atomicat-heading-title-49431dd h3,
+  .atomicat-heading-title-cc4231b h3 {
+    font-size: 0.88rem !important;
+    line-height: 1.4 !important;
+    margin-top: 10px !important;
+    color: #64748b !important;
+    text-align: center !important;
+  }
+
+  /* Pain & Success Checklists */
+  .atomicat-container-6ef2381 > .a-o-cont {
+    padding-top: 25px !important;
+    padding-bottom: 25px !important;
+  }
+
+  .a-c-cont-01b5481 > .a-e-cont,
+  .a-c-cont-907ca81 > .a-e-cont {
+    padding-right: 0 !important;
+    width: 100% !important;
+  }
+
+  .a-icl-cont .a-icl-list {
+    gap: 12px !important;
+  }
+
+  .a-icl-cont .a-icl-list .a-icl-item {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 14px !important;
+    padding: 14px 16px !important;
+    gap: 14px !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02) !important;
+  }
+
+  .a-icl-cont .a-icl-list .a-icl-item .a-icl-cnt-bx .a-icl-ttl {
+    font-size: 0.96rem !important;
+    line-height: 1.4 !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+  }
+
+  .a-icl-01b5481 .a-icl-item {
+    border-left: 4px solid #ef4444 !important;
+  }
+
+  .a-icl-907ca81 .a-icl-item {
+    border-left: 4px solid #10b981 !important;
+    background: #f0fdf4 !important;
+  }
+
+  .atomicat-heading-title-ba51762 h3 {
+    font-size: 1.25rem !important;
+    line-height: 1.35 !important;
+    margin-top: 20px !important;
+    margin-bottom: 12px !important;
+  }
+
+  /* 4 Steps Section */
+  .atomicat-container-2265f8e > .a-o-cont {
+    padding-top: 25px !important;
+    padding-bottom: 25px !important;
+  }
+
+  .atomicat-heading-title-7f9c27c h3 {
+    font-size: 1.35rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 20px !important;
+  }
+
+  .atomicat-container-a160d81 > .a-o-cont > .a-cont {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  .atomicat-container-b21e57b,
+  .atomicat-container-ccb5a37,
+  .atomicat-container-c64182a,
+  .atomicat-container-9d6918b {
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 16px !important;
+    background: #ffffff !important;
+    padding: 16px !important;
+    box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.05) !important;
+    margin-bottom: 0 !important;
+  }
+
+  .atomicat-heading-title-4041b30 h3,
+  .atomicat-heading-title-a941c7a h3,
+  .atomicat-heading-title-210556b h3,
+  .atomicat-heading-title-bfe0660 h3 {
+    font-size: 1.05rem !important;
+    line-height: 1.35 !important;
+    margin-top: 10px !important;
+    text-align: center !important;
+  }
+
+  /* Offer Section Mobile High-End Polish */
   #offerta, 
   .atomicat-container-4868b0f {
-    padding: 35px 18px !important;
-    border-radius: 22px !important;
+    padding: 32px 18px !important;
+    border-radius: 24px !important;
     margin-top: 30px !important;
     margin-bottom: 30px !important;
+    box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.7) !important;
   }
   
   #offerta .atomicat-heading-title-3ec6468,
   #offerta .atomicat-text-3ec6468,
   #offerta .atomicat-heading-title-3ec6468 * {
-    font-size: 1.2rem !important;
+    font-size: 1.15rem !important;
+    line-height: 1.45 !important;
   }
   
   #offerta .atomicat-heading-title-3e7a759,
   #offerta .atomicat-text-3e7a759,
   #offerta .atomicat-heading-title-3e7a759 * {
-    font-size: 3.2rem !important;
+    font-size: 3.4rem !important;
+    line-height: 1 !important;
   }
   
   #offerta .atomicat-heading-title-79e3499,
@@ -741,15 +920,33 @@ h1, h2, h3, h4, .atomicat-title {
   #offerta .atomicat-heading-title-bd2ac2e,
   #offerta .atomicat-heading-title-78b58c6 {
     font-size: 0.95rem !important;
+    line-height: 1.35 !important;
   }
-  
-  .a-btn, 
-  .atomicat-checkout-button, 
-  .atomicat-anchor-button {
+
+  #offerta .atomicat-checkout-button {
+    font-size: 1.08rem !important;
+    padding: 20px 24px !important;
+    min-height: 60px !important;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  }
+
+  /* Testimonials */
+  .atomicat-container-460acd2, 
+  .atomicat-container-79cd27c {
+    border-radius: 16px !important;
+    padding: 16px !important;
+    margin-bottom: 14px !important;
+  }
+
+  /* FAQ items on mobile */
+  .a-ac-t {
+    padding: 16px 18px !important;
+    font-size: 1rem !important;
+  }
+
+  .a-ac-d {
+    padding: 14px 18px !important;
     font-size: 0.95rem !important;
-    padding: 16px 20px !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
   }
   
   img {

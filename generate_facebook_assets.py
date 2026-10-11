@@ -1,18 +1,21 @@
-import os, math
+import os, math, shutil
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 out_dir = 'facebook_assets'
 os.makedirs(out_dir, exist_ok=True)
 os.makedirs('public/images', exist_ok=True)
 
+artifact_dir = '/Users/lenovo/.gemini/antigravity-ide/brain/4f6a13cf-788b-43b9-a736-315fad1def3a'
+ai_wallpaper_path = os.path.join(artifact_dir, 'fb_cover_edu_wallpaper_1791587758847.jpg')
+
 font_bold = '/System/Library/Fonts/Supplemental/Arial Bold.ttf'
 font_reg = '/System/Library/Fonts/Supplemental/Arial.ttf'
 font_treb = '/System/Library/Fonts/Supplemental/Trebuchet MS Bold.ttf'
 font_georgia = '/System/Library/Fonts/Supplemental/Georgia Bold.ttf'
 
-def get_font(path, size):
+def get_font(path, size, index=0):
     try:
-        return ImageFont.truetype(path, size)
+        return ImageFont.truetype(path, size, index=index)
     except:
         return ImageFont.load_default()
 
@@ -39,135 +42,9 @@ def draw_arrow(draw, x, y, size=16, color='#ffffff', width=3):
     draw.line([(x + size - size//3, y + size), (x + size, y + size//2)], fill=color, width=width)
 
 # ==========================================
-# 1. ULTRA-PREMIUM FACEBOOK PROFILE (1080x1080)
+# OPTION 1: HIGH-CONVERTING ADVERTISING SHOWCASE (1640x624)
 # ==========================================
-def generate_fb_profile():
-    w, h = 1080, 1080
-    img = Image.new('RGB', (w, h), color='#0b1120')
-    draw = ImageDraw.Draw(img)
-    
-    # Rich Luxury Radial/Vertical Gradient
-    cx, cy = w // 2, h // 2
-    for y in range(h):
-        ratio = y / h
-        r = int(11 + ratio * 14)
-        g = int(17 + ratio * 20)
-        b = int(32 + ratio * 50)
-        draw.line([(0, y), (w, y)], fill=(r, g, b))
-        
-    # Ambient glowing central circle
-    glow = Image.new('RGBA', (w, h), (0, 0, 0, 0))
-    glow_draw = ImageDraw.Draw(glow)
-    for r_glow in range(400, 50, -10):
-        alpha = int((1 - r_glow / 400) * 45)
-        glow_draw.ellipse([cx - r_glow, cy - r_glow - 30, cx + r_glow, cy + r_glow - 30], fill=(56, 189, 248, alpha))
-    glow = glow.filter(ImageFilter.GaussianBlur(35))
-    img.paste(glow, (0, 0), glow)
-    draw = ImageDraw.Draw(img)
-
-    # Outer Circular Luxury Frame (Safe circular avatar)
-    r_outer = 485
-    draw.ellipse([cx - r_outer, cy - r_outer, cx + r_outer, cy + r_outer], outline='#f59e0b', width=4)
-    draw.ellipse([cx - r_outer + 12, cy - r_outer + 12, cx + r_outer - 12, cy + r_outer - 12], outline='#38bdf8', width=2)
-    
-    # 5 Luxury Stars at Top
-    star_xs = [cx - 90, cx - 45, cx, cx + 45, cx + 90]
-    star_ys = [cy - 275, cy - 290, cy - 298, cy - 290, cy - 275]
-    star_sizes = [13, 16, 20, 16, 13]
-    for sx, sy, sr in zip(star_xs, star_ys, star_sizes):
-        draw_star(draw, sx, sy, r=sr, color='#fbbf24')
-
-    # Stylized Luxury Open Book & Knowledge Spark
-    spine_x = cx
-    spine_top = cy - 180
-    spine_bot = cy - 40
-    
-    # Left Wing of Book
-    draw.polygon([
-        (spine_x - 10, spine_top + 15),
-        (cx - 170, spine_top - 20),
-        (cx - 170, spine_bot - 20),
-        (spine_x - 10, spine_bot + 15)
-    ], fill='#ffffff')
-    
-    # Left Page 2
-    draw.polygon([
-        (spine_x - 10, spine_top + 20),
-        (cx - 150, spine_top - 10),
-        (cx - 150, spine_bot - 10),
-        (spine_x - 10, spine_bot + 20)
-    ], fill='#f8fafc')
-    
-    # Right Wing of Book
-    draw.polygon([
-        (spine_x + 10, spine_top + 15),
-        (cx + 170, spine_top - 20),
-        (cx + 170, spine_bot - 20),
-        (spine_x + 10, spine_bot + 15)
-    ], fill='#e2e8f0')
-    
-    # Right Page 2
-    draw.polygon([
-        (spine_x + 10, spine_top + 20),
-        (cx + 150, spine_top - 10),
-        (cx + 150, spine_bot - 10),
-        (spine_x + 10, spine_bot + 20)
-    ], fill='#cbd5e1')
-
-    # Lines representing text on the pages
-    for i in range(4):
-        ly = spine_top + 25 + i * 18
-        draw.line([(cx - 145, ly - 5), (cx - 30, ly + 6)], fill='#64748b', width=4)
-        draw.line([(cx + 30, ly + 6), (cx + 145, ly - 5)], fill='#64748b', width=4)
-        
-    # Knowledge Spark / Star emerging from the book
-    draw_star(draw, cx, spine_top - 28, r=28, color='#38bdf8')
-    draw_star(draw, cx, spine_top - 28, r=16, color='#ffffff')
-
-    # Brand Title: INTERPRETARE
-    f_title1 = get_font(font_treb, 56)
-    t1 = 'INTERPRETARE'
-    bbox1 = draw.textbbox((0, 0), t1, font=f_title1)
-    w1 = bbox1[2] - bbox1[0]
-    draw.text((cx - w1//2, cy + 35), t1, font=f_title1, fill='#ffffff')
-
-    # Sub Title: PER EVOLVERE
-    f_title2 = get_font(font_treb, 48)
-    t2 = 'PER EVOLVERE'
-    bbox2 = draw.textbbox((0, 0), t2, font=f_title2)
-    w2 = bbox2[2] - bbox2[0]
-    draw.text((cx - w2//2, cy + 105), t2, font=f_title2, fill='#38bdf8')
-
-    # Luxury Badge Pill: METODO DIDATTICO 2.0
-    pill_w = 440
-    pill_h = 58
-    px1, py1 = cx - pill_w//2, cy + 190
-    px2, py2 = cx + pill_w//2, cy + 190 + pill_h
-    draw.rounded_rectangle([px1, py1, px2, py2], radius=29, fill='#f59e0b')
-    
-    f_pill = get_font(font_bold, 27)
-    tp = 'METODO DIDATTICO 2.0'
-    bbox_p = draw.textbbox((0, 0), tp, font=f_pill)
-    wp = bbox_p[2] - bbox_p[0]
-    draw.text((cx - wp//2, py1 + 14), tp, font=f_pill, fill='#070b19')
-
-    # Bottom Tagline
-    f_tag = get_font(font_bold, 24)
-    tag = 'AUTONOMIA NELLO STUDIO DAI 7 AI 12 ANNI'
-    bbox_tag = draw.textbbox((0, 0), tag, font=f_tag)
-    wtag = bbox_tag[2] - bbox_tag[0]
-    draw.text((cx - wtag//2, cy + 275), tag, font=f_tag, fill='#94a3b8')
-
-    img.save(os.path.join(out_dir, 'facebook_profile_picture.png'), 'PNG')
-    img.save(os.path.join(out_dir, 'facebook_profile_picture.jpg'), 'JPEG', quality=95)
-    img.save('public/images/facebook_profile_picture.png', 'PNG')
-    print('Generated Ultra-Premium Facebook Profile Picture!')
-
-# ==========================================
-# 2. ULTRA-PREMIUM FACEBOOK COVER (1640x624)
-# NO PRICE - LUXURY SHOWCASE
-# ==========================================
-def generate_fb_cover():
+def generate_cover_option_1():
     w, h = 1640, 624
     img = Image.new('RGB', (w, h), color='#070b19')
     draw = ImageDraw.Draw(img)
@@ -183,9 +60,7 @@ def generate_fb_cover():
     # Ambient glows
     glow = Image.new('RGBA', (w, h), (0, 0, 0, 0))
     gdraw = ImageDraw.Draw(glow)
-    # Blue glow on left behind headline
     gdraw.ellipse([50, 40, 750, 560], fill=(56, 189, 248, 25))
-    # Amber/indigo glow on right behind 3D bundle
     gdraw.ellipse([880, 80, 1620, 590], fill=(99, 102, 241, 35))
     glow = glow.filter(ImageFilter.GaussianBlur(55))
     img.paste(glow, (0, 0), glow)
@@ -199,8 +74,8 @@ def generate_fb_cover():
         cb = int(248 + ratio * (11 - 248))
         draw.line([(x, 0), (x, 5)], fill=(cr, cg, cb))
 
-    # --- LEFT SECTION: VALUE PROPOSITION (NO PRICE) ---
-    # 1. Authority Tag Pill (Extra wide to never clip stars)
+    # --- LEFT SECTION: VALUE PROPOSITION (SAFE FROM AVATAR OVERLAY) ---
+    # 1. Authority Tag Pill
     draw.rounded_rectangle([70, 40, 540, 84], radius=22, fill='#1e293b', outline='#38bdf8', width=2)
     draw_star(draw, 96, 62, r=10, color='#fbbf24')
     draw.text((118, 51), 'METODO DIDATTICO VALIDATO · 2026', font=get_font(font_bold, 20), fill='#f8fafc')
@@ -211,7 +86,7 @@ def generate_fb_cover():
     draw.text((70, 164), 'DEL TESTO 2.0', font=get_font(font_treb, 54), fill='#38bdf8')
 
     # 3. Subheadline
-    draw.text((70, 242), '587 Attività Didattiche Progressive + 4 Bonus Esclusivi', font=get_font(font_bold, 24), fill='#fbbf24')
+    draw.text((70, 242), '587 Attivita Didattiche Progressive + 4 Bonus Esclusivi', font=get_font(font_bold, 24), fill='#fbbf24')
     draw.text((70, 280), 'Insegna a tuo figlio a comprendere ogni testo e studiare da solo.', font=get_font(font_reg, 21), fill='#cbd5e1')
 
     # 4. Feature Checklist with Emerald Badges
@@ -227,10 +102,9 @@ def generate_fb_cover():
         draw_checkmark(draw, 74, fy + 5, size=14, color='#34d399', width=2)
         draw.text((105, fy), feat, font=get_font(font_bold, 20), fill='#f1f5f9')
 
-    # 5. Luxury CTA Button (NO PRICE - spacious padding)
+    # 5. Luxury CTA Button
     btn_x1, btn_y1 = 70, 498
     btn_x2, btn_y2 = 530, 568
-    # Emerald Gradient Button
     for by in range(btn_y1, btn_y2):
         bratio = (by - btn_y1) / (btn_y2 - btn_y1)
         br = int(16 + bratio * (5 - 16))
@@ -252,7 +126,7 @@ def generate_fb_cover():
         bh = int(bundle.height * (bw / bundle.width))
         bundle_resized = bundle.resize((bw, bh), Image.Resampling.LANCZOS)
         
-        # Add realistic ambient shadow beneath the bundle
+        # Shadow
         shadow = Image.new('RGBA', (w, h), (0, 0, 0, 0))
         sdraw = ImageDraw.Draw(shadow)
         bx = w - bw - 20
@@ -260,11 +134,9 @@ def generate_fb_cover():
         sdraw.ellipse([bx + 30, by + bh - 50, bx + bw - 30, by + bh + 30], fill=(0, 0, 0, 220))
         shadow = shadow.filter(ImageFilter.GaussianBlur(30))
         img.paste(shadow, (0, 0), shadow)
-        
-        # Paste transparent 3D bundle
         img.paste(bundle_resized, (bx, by), bundle_resized)
 
-        # Floating Trust Badge 1 (Top Right of bundle)
+        # Badges
         badge1_x1, badge1_y1 = w - 265, 40
         badge1_x2, badge1_y2 = w - 40, 102
         draw.rounded_rectangle([badge1_x1, badge1_y1, badge1_x2, badge1_y2], radius=14, fill='#1e293b', outline='#f59e0b', width=2)
@@ -272,7 +144,6 @@ def generate_fb_cover():
         draw.text((badge1_x1 + 45, badge1_y1 + 13), 'ACCESSO 100%', font=get_font(font_bold, 17), fill='#ffffff')
         draw.text((badge1_x1 + 45, badge1_y1 + 33), 'DIGITALE IMMEDIATO', font=get_font(font_bold, 14), fill='#38bdf8')
 
-        # Floating Trust Badge 2 (Bottom Right)
         badge2_x1, badge2_y1 = w - 275, 520
         badge2_x2, badge2_y2 = w - 40, 582
         draw.rounded_rectangle([badge2_x1, badge2_y1, badge2_x2, badge2_y2], radius=14, fill='#064e3b', outline='#10b981', width=2)
@@ -280,12 +151,179 @@ def generate_fb_cover():
         draw.text((badge2_x1 + 48, badge2_y1 + 14), 'GARANZIA 7 GIORNI', font=get_font(font_bold, 17), fill='#ffffff')
         draw.text((badge2_x1 + 48, badge2_y1 + 33), '100% SODDISFATTI', font=get_font(font_bold, 14), fill='#a7f3d0')
 
+    img.save(os.path.join(out_dir, 'facebook_cover_option_1_ad_showcase.png'), 'PNG')
+    img.save(os.path.join(out_dir, 'facebook_cover_option_1_ad_showcase.jpg'), 'JPEG', quality=95)
     img.save(os.path.join(out_dir, 'facebook_cover_wallpaper.png'), 'PNG')
     img.save(os.path.join(out_dir, 'facebook_cover_wallpaper.jpg'), 'JPEG', quality=95)
-    img.save('public/images/facebook_cover_wallpaper.png', 'PNG')
-    print('Generated Ultra-Premium Facebook Cover Wallpaper (NO PRICE)!')
+    shutil.copy(os.path.join(out_dir, 'facebook_cover_option_1_ad_showcase.jpg'), os.path.join(artifact_dir, 'facebook_cover_option_1_ad_showcase.jpg'))
+    print('Generated Option 1: Ad Showcase!')
+
+# ==========================================
+# OPTION 2: PHOTOREALISTIC WARM STUDY BACKDROP WITH 3D BUNDLE (1640x624)
+# ==========================================
+def generate_cover_option_2():
+    w, h = 1640, 624
+    if not os.path.exists(ai_wallpaper_path):
+        print('AI wallpaper not found, skipping option 2')
+        return
+
+    base_ai = Image.open(ai_wallpaper_path).convert('RGB')
+    
+    # Crop to 1640x624 with artistic center-crop
+    target_ratio = w / h
+    img_ratio = base_ai.width / base_ai.height
+    if img_ratio > target_ratio:
+        new_w = int(base_ai.height * target_ratio)
+        offset = (base_ai.width - new_w) // 2
+        cropped = base_ai.crop((offset, 0, offset + new_w, base_ai.height))
+    else:
+        new_h = int(base_ai.width / target_ratio)
+        offset = (base_ai.height - new_h) // 2
+        cropped = base_ai.crop((0, offset, base_ai.width, offset + new_h))
+        
+    bg = cropped.resize((w, h), Image.Resampling.LANCZOS)
+    
+    # Add subtle luxury vignette and dark overlay on the left to make text pop
+    overlay = Image.new('RGBA', (w, h), (0, 0, 0, 0))
+    odraw = ImageDraw.Draw(overlay)
+    
+    # Left dark gradient panel for high readability
+    for x in range(int(w * 0.65)):
+        ratio = 1.0 - (x / (w * 0.65))
+        alpha = int(ratio * 210)
+        odraw.line([(x, 0), (x, h)], fill=(7, 11, 25, alpha))
+        
+    # Top & bottom subtle shade
+    for y in range(80):
+        alpha = int((1.0 - y / 80) * 120)
+        odraw.line([(0, y), (w, y)], fill=(0, 0, 0, alpha))
+        odraw.line([(0, h - 1 - y), (w, h - 1 - y)], fill=(0, 0, 0, alpha))
+
+    # Glassmorphism Card for Left Content
+    odraw.rounded_rectangle([50, 35, 780, 580], radius=24, fill=(11, 17, 32, 185), outline=(56, 189, 248, 140), width=2)
+    
+    bg = Image.alpha_composite(bg.convert('RGBA'), overlay).convert('RGBA')
+
+    # --- RIGHT SECTION: 3D BUNDLE ---
+    mockup_path = 'public/images/bundle_floodfill_transparent.png'
+    if os.path.exists(mockup_path):
+        bundle = Image.open(mockup_path).convert('RGBA')
+        bw = 700
+        bh = int(bundle.height * (bw / bundle.width))
+        bundle_resized = bundle.resize((bw, bh), Image.Resampling.LANCZOS)
+        
+        # Soft glowing back-illumination
+        glow = Image.new('RGBA', (w, h), (0, 0, 0, 0))
+        gdraw = ImageDraw.Draw(glow)
+        bx = w - bw - 20
+        by = h//2 - bh//2 + 5
+        gdraw.ellipse([bx + 50, by + 40, bx + bw - 50, by + bh - 20], fill=(245, 158, 11, 55))
+        glow = glow.filter(ImageFilter.GaussianBlur(50))
+        bg = Image.alpha_composite(bg, glow)
+        
+        # Shadow
+        shadow = Image.new('RGBA', (w, h), (0, 0, 0, 0))
+        sdraw = ImageDraw.Draw(shadow)
+        sdraw.ellipse([bx + 30, by + bh - 55, bx + bw - 30, by + bh + 25], fill=(0, 0, 0, 240))
+        shadow = shadow.filter(ImageFilter.GaussianBlur(25))
+        bg = Image.alpha_composite(bg, shadow)
+        
+        bg.paste(bundle_resized, (bx, by), bundle_resized)
+
+    # Convert to RGB for drawing
+    bg = bg.convert('RGB')
+    draw = ImageDraw.Draw(bg)
+
+    # 1. Authority Tag Pill
+    draw.rounded_rectangle([75, 55, 525, 98], radius=21, fill='#1e293b', outline='#38bdf8', width=2)
+    draw_star(draw, 98, 76, r=10, color='#fbbf24')
+    draw.text((118, 65), 'METODO DIDATTICO VALIDATO · 2026', font=get_font(font_bold, 19), fill='#f8fafc')
+    draw_star(draw, 502, 76, r=10, color='#fbbf24')
+
+    # 2. Headline
+    draw.text((75, 118), 'KIT COMPRENSIONE', font=get_font(font_treb, 50), fill='#ffffff')
+    draw.text((75, 172), 'DEL TESTO 2.0', font=get_font(font_treb, 50), fill='#38bdf8')
+
+    # 3. Subheadline
+    draw.text((75, 245), '587 Attivita Didattiche + 4 Bonus Esclusivi', font=get_font(font_bold, 22), fill='#fbbf24')
+    draw.text((75, 280), 'Comprensione del testo autonoma per bambini 7-12 anni.', font=get_font(font_reg, 19), fill='#e2e8f0')
+
+    # 4. Feature Checklist
+    features = [
+        '587 Schede Stampabili ad Alta Risoluzione',
+        'Soluzioni Complete per Autoverifica e Genitori',
+        '4 Quaderni Didattici Esclusivi Inclusi',
+        'Garanzia Soddisfatti o Rimborsati 7 Giorni'
+    ]
+    for i, feat in enumerate(features):
+        fy = 328 + i * 36
+        draw.ellipse([75, fy + 2, 97, fy + 24], fill='#064e3b', outline='#10b981', width=1)
+        draw_checkmark(draw, 79, fy + 5, size=14, color='#34d399', width=2)
+        draw.text((108, fy), feat, font=get_font(font_bold, 19), fill='#f8fafc')
+
+    # 5. CTA Button
+    btn_x1, btn_y1 = 75, 495
+    btn_x2, btn_y2 = 490, 560
+    for by in range(btn_y1, btn_y2):
+        bratio = (by - btn_y1) / (btn_y2 - btn_y1)
+        btn_r = int(16 + bratio * (5 - 16))
+        btn_g = int(185 + bratio * (150 - 185))
+        btn_b = int(129 + bratio * (105 - 129))
+        draw.line([(btn_x1, by), (btn_x2, by)], fill=(btn_r, btn_g, btn_b))
+    draw.rounded_rectangle([btn_x1, btn_y1, btn_x2, btn_y2], radius=16, outline='#6ee7b7', width=2)
+    draw.text((btn_x1 + 30, btn_y1 + 18), 'ACCEDI AL METODO COMPLETO', font=get_font(font_bold, 20), fill='#ffffff')
+    draw_arrow(draw, btn_x1 + 380, btn_y1 + 24, size=18, color='#ffffff', width=3)
+
+    if os.path.exists(mockup_path):
+        # Top Badge
+        badge1_x1, badge1_y1 = w - 265, 40
+        badge1_x2, badge1_y2 = w - 40, 102
+        draw.rounded_rectangle([badge1_x1, badge1_y1, badge1_x2, badge1_y2], radius=14, fill='#1e293b', outline='#f59e0b', width=2)
+        draw_star(draw, badge1_x1 + 22, badge1_y1 + 31, r=12, color='#fbbf24')
+        draw.text((badge1_x1 + 45, badge1_y1 + 13), 'ACCESSO 100%', font=get_font(font_bold, 17), fill='#ffffff')
+        draw.text((badge1_x1 + 45, badge1_y1 + 33), 'DIGITALE IMMEDIATO', font=get_font(font_bold, 14), fill='#38bdf8')
+
+        # Bottom Badge
+        badge2_x1, badge2_y1 = w - 275, 520
+        badge2_x2, badge2_y2 = w - 40, 582
+        draw.rounded_rectangle([badge2_x1, badge2_y1, badge2_x2, badge2_y2], radius=14, fill='#064e3b', outline='#10b981', width=2)
+        draw_checkmark(draw, badge2_x1 + 18, badge2_y1 + 18, size=18, color='#34d399', width=3)
+        draw.text((badge2_x1 + 48, badge2_y1 + 14), 'GARANZIA 7 GIORNI', font=get_font(font_bold, 17), fill='#ffffff')
+        draw.text((badge2_x1 + 48, badge2_y1 + 33), '100% SODDISFATTI', font=get_font(font_bold, 14), fill='#a7f3d0')
+
+    bg.save(os.path.join(out_dir, 'facebook_cover_option_2_warm_study_bundle.png'), 'PNG')
+    bg.save(os.path.join(out_dir, 'facebook_cover_option_2_warm_study_bundle.jpg'), 'JPEG', quality=95)
+    shutil.copy(os.path.join(out_dir, 'facebook_cover_option_2_warm_study_bundle.jpg'), os.path.join(artifact_dir, 'facebook_cover_option_2_warm_study_bundle.jpg'))
+    print('Generated Option 2: Warm Study Bundle!')
+
+# ==========================================
+# OPTION 3: PURE PHOTOREALISTIC WARM WALLPAPER (1640x624)
+# ==========================================
+def generate_cover_option_3():
+    w, h = 1640, 624
+    if not os.path.exists(ai_wallpaper_path):
+        return
+
+    base_ai = Image.open(ai_wallpaper_path).convert('RGB')
+    target_ratio = w / h
+    img_ratio = base_ai.width / base_ai.height
+    if img_ratio > target_ratio:
+        new_w = int(base_ai.height * target_ratio)
+        offset = (base_ai.width - new_w) // 2
+        cropped = base_ai.crop((offset, 0, offset + new_w, base_ai.height))
+    else:
+        new_h = int(base_ai.width / target_ratio)
+        offset = (base_ai.height - new_h) // 2
+        cropped = base_ai.crop((0, offset, base_ai.width, offset + new_h))
+        
+    bg = cropped.resize((w, h), Image.Resampling.LANCZOS)
+    bg.save(os.path.join(out_dir, 'facebook_cover_option_3_photorealistic_warm_wallpaper.png'), 'PNG')
+    bg.save(os.path.join(out_dir, 'facebook_cover_option_3_photorealistic_warm_wallpaper.jpg'), 'JPEG', quality=95)
+    shutil.copy(os.path.join(out_dir, 'facebook_cover_option_3_photorealistic_warm_wallpaper.jpg'), os.path.join(artifact_dir, 'facebook_cover_option_3_photorealistic_warm_wallpaper.jpg'))
+    print('Generated Option 3: Clean Wallpaper!')
 
 if __name__ == '__main__':
-    generate_fb_profile()
-    generate_fb_cover()
-    print('All upgraded Facebook assets generated successfully!')
+    generate_cover_option_1()
+    generate_cover_option_2()
+    generate_cover_option_3()
+    print('All wallpaper & cover options created successfully!')

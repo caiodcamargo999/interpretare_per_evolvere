@@ -10,4 +10,7 @@ dist/
 scratch_*
 *.pyc
 __pycache__/
-EOF
+# Environment variables
+.env
+.env.local
+.env.*.local

@@ -49,7 +49,7 @@ export function getUrlWithParams(destinationUrl: string): string {
   } catch (e) {
     const cleanSearch = search.startsWith('?') ? search.substring(1) : search;
     const separator = destinationUrl.includes('?') ? '&' : '?';
-    return ;
+    return destinationUrl + separator + cleanSearch;
   }
 }
 

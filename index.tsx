@@ -53,7 +53,7 @@ export function getUrlWithParams(destinationUrl: string): string {
   }
 }
 
-// Redirects explicitly using window.location.href, forcing URL parameters pass-through and firing Meta InitiateCheckout
+// Redirects explicitly using window.location.href, forcing URL parameters pass-through
 export function redirectToUrl(destinationUrl: string) {
   if (!destinationUrl || typeof window === 'undefined') return;
 
@@ -63,20 +63,6 @@ export function redirectToUrl(destinationUrl: string) {
       elem.scrollIntoView({ behavior: 'smooth' });
     }
     return;
-  }
-
-  // Track Meta Pixel InitiateCheckout
-  if (typeof (window as any).fbq === 'function') {
-    try {
-      (window as any).fbq('track', 'InitiateCheckout', {
-        content_name: 'Kit Comprensione del Testo 2.0',
-        content_category: 'Didattica',
-        value: 27.00,
-        currency: 'EUR'
-      });
-    } catch (err) {
-      console.error('Meta Pixel error:', err);
-    }
   }
 
   const finalUrl = getUrlWithParams(destinationUrl);

@@ -954,3 +954,678 @@ h1, h2, h3, h4, .atomicat-title {
     height: auto !important;
   }
 }
+
+
+
+/* =================================================== */
+/* 📱 ULTIMATE IPHONE & MOBILE RESPONSIVE SYSTEM 2026 */
+/* =================================================== */
+
+/* 1. Global Viewport & Root Fixes for iOS / Safari */
+html, body {
+  width: 100% !important;
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+  position: relative !important;
+  -webkit-text-size-adjust: 100% !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box !important;
+}
+
+/* 2. iPhone & Mobile Viewports (<= 768px and standard iPhone screens 375px-430px) */
+@media screen and (max-width: 768px) {
+  /* Prevent horizontal blowout across all Atomicat containers */
+  .a-b-cont,
+  .a-b-o-cont,
+  .a-o-cont,
+  .a-cont,
+  .a-c-cont,
+  .a-e-cont {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Safe container horizontal padding for iPhone notch / edges */
+  .a-o-cont {
+    padding-left: max(14px, env(safe-area-inset-left)) !important;
+    padding-right: max(14px, env(safe-area-inset-right)) !important;
+  }
+
+  .a-cont-b > .a-cont,
+  .a-cont-f-w > .a-cont {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Word break and hyphenation prevention for Italian typography */
+  h1, h2, h3, h4, h5, h6, p, span, a, li {
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  /* All images responsive */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+  }
+
+  /* -------------------------------------------------
+     HERO SECTION ON IPHONE
+  ------------------------------------------------- */
+  .atomicat-container-06e2afb > .a-o-cont {
+    padding-top: max(8px, env(safe-area-inset-top)) !important;
+    padding-bottom: 12px !important;
+    padding-left: max(10px, env(safe-area-inset-left)) !important;
+    padding-right: max(10px, env(safe-area-inset-right)) !important;
+  }
+
+  .a-c-cont-c509ab5 {
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  .a-c-cont-c509ab5 > .a-e-cont {
+    margin: 0 0 16px 0 !important;
+  }
+
+  .a-img-ele-c509ab5 img {
+    border-radius: 18px !important;
+    box-shadow: 0 12px 30px -6px rgba(0, 0, 0, 0.15) !important;
+    width: 100% !important;
+  }
+
+  /* -------------------------------------------------
+     COMPARISON CARDS (Problem vs Solution)
+  ------------------------------------------------- */
+  .atomicat-container-c49effb > .a-o-cont {
+    padding: 10px 12px 20px 12px !important;
+  }
+
+  .atomicat-container-c49effb > .a-o-cont > .a-cont {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    width: 100% !important;
+  }
+
+  .a-b-cont .atomicat-container-c5209a5.a-b-o-cont,
+  .a-b-cont .atomicat-container-d3d617b.a-b-o-cont {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    border-radius: 18px !important;
+    padding: 16px 14px !important;
+  }
+
+  .atomicat-heading-title-0e97bb4 h3,
+  .atomicat-heading-title-3860c55 h3 {
+    font-size: clamp(1.05rem, 4vw, 1.25rem) !important;
+    line-height: 1.35 !important;
+    margin-bottom: 12px !important;
+  }
+
+  /* -------------------------------------------------
+     PRIMARY & SECONDARY CTA BUTTONS ON IPHONE
+  ------------------------------------------------- */
+  .a-btn, 
+  .atomicat-checkout-button, 
+  .atomicat-anchor-button,
+  .a-btn-e634791.a-e-cont .a-btn,
+  .a-btn-8e2ac92.a-e-cont .a-btn,
+  .a-btn-802f06e.a-e-cont .a-btn,
+  .a-btn-0720760.a-e-cont .a-btn,
+  .a-btn-40c1c0c.a-e-cont .a-btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 54px !important;
+    font-size: clamp(0.85rem, 3.8vw, 1.05rem) !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.02em !important;
+    padding: 16px 14px !important;
+    border-radius: 50px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  .a-btn-e634791.a-e-cont .a-btn,
+  .a-btn-8e2ac92.a-e-cont .a-btn {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+    box-shadow: 0 10px 25px -4px rgba(16, 185, 129, 0.45) !important;
+  }
+
+  .atomicat-heading-title-877ff91 h3,
+  .atomicat-heading-title-1bdfdfa h3 {
+    font-size: clamp(1.15rem, 4.5vw, 1.4rem) !important;
+    line-height: 1.35 !important;
+    text-align: center !important;
+    margin-bottom: 8px !important;
+  }
+
+  .atomicat-heading-title-49431dd h3,
+  .atomicat-heading-title-cc4231b h3 {
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+    color: #64748b !important;
+    text-align: center !important;
+    margin-top: 10px !important;
+  }
+
+  /* -------------------------------------------------
+     CHECKLIST SECTION (Pain Points & Solution)
+  ------------------------------------------------- */
+  .atomicat-container-6ef2381 > .a-o-cont {
+    padding: 24px 12px !important;
+  }
+
+  .atomicat-container-6ef2381 > .a-o-cont > .a-cont {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    justify-content: flex-start !important;
+  }
+
+  .a-b-cont .atomicat-container-6ef2381.a-b-o-cont {
+    margin: 0 !important;
+  }
+
+  .a-c-cont-01b5481 > .a-e-cont,
+  .a-c-cont-907ca81 > .a-e-cont {
+    padding-right: 0 !important;
+    width: 100% !important;
+  }
+
+  .a-icl-cont .a-icl-list {
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .a-icl-cont .a-icl-list .a-icl-item {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 14px !important;
+    padding: 12px 14px !important;
+    gap: 12px !important;
+    width: 100% !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03) !important;
+  }
+
+  .a-icl-cont .a-icl-list .a-icl-item .a-icl-cnt-bx .a-icl-ttl {
+    font-size: 0.92rem !important;
+    line-height: 1.4 !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+  }
+
+  .a-icl-01b5481 .a-icl-item {
+    border-left: 4px solid #ef4444 !important;
+  }
+
+  .a-icl-907ca81 .a-icl-item {
+    border-left: 4px solid #10b981 !important;
+    background: #f0fdf4 !important;
+  }
+
+  .atomicat-heading-title-ba51762 h3 {
+    font-size: clamp(1.1rem, 4vw, 1.35rem) !important;
+    line-height: 1.35 !important;
+    margin-top: 24px !important;
+    margin-bottom: 12px !important;
+    text-align: center !important;
+  }
+
+  /* -------------------------------------------------
+     PURPLE BANNER HIGHLIGHT
+  ------------------------------------------------- */
+  .atomicat-container-70a7aae > .a-o-cont,
+  .atomicat-container-4033a6a > .a-o-cont {
+    padding: 24px 14px !important;
+  }
+
+  .atomicat-heading-title-bf2c156 h3,
+  .atomicat-heading-title-dc6df87 h3 {
+    font-size: clamp(1.15rem, 4.5vw, 1.45rem) !important;
+    line-height: 1.35 !important;
+    text-align: center !important;
+  }
+
+  .atomicat-heading-title-076af9f h3,
+  .atomicat-heading-title-23f3edf h3 {
+    font-size: clamp(0.92rem, 3.5vw, 1.05rem) !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+    margin-top: 8px !important;
+  }
+
+  /* -------------------------------------------------
+     4 STEPS SECTION (Vertical Stacking)
+  ------------------------------------------------- */
+  .atomicat-container-2265f8e > .a-o-cont {
+    padding: 24px 12px !important;
+  }
+
+  .atomicat-heading-title-7f9c27c h3 {
+    font-size: clamp(1.2rem, 4.5vw, 1.5rem) !important;
+    line-height: 1.3 !important;
+    margin-bottom: 18px !important;
+    text-align: center !important;
+  }
+
+  .atomicat-container-a160d81 > .a-o-cont > .a-cont {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    width: 100% !important;
+  }
+
+  .atomicat-container-b21e57b,
+  .atomicat-container-ccb5a37,
+  .atomicat-container-c64182a,
+  .atomicat-container-9d6918b {
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 16px !important;
+    background: #ffffff !important;
+    padding: 14px !important;
+    width: 100% !important;
+    margin: 0 !important;
+    box-shadow: 0 4px 14px -2px rgba(0, 0, 0, 0.05) !important;
+  }
+
+  .atomicat-heading-title-4041b30 h3,
+  .atomicat-heading-title-a941c7a h3,
+  .atomicat-heading-title-210556b h3,
+  .atomicat-heading-title-bfe0660 h3 {
+    font-size: 0.98rem !important;
+    line-height: 1.35 !important;
+    margin-top: 8px !important;
+    text-align: center !important;
+  }
+
+  /* -------------------------------------------------
+     SHOWCASE IMAGES SECTION (Two columns -> Stack)
+  ------------------------------------------------- */
+  .atomicat-container-ad871cc > .a-o-cont > .a-cont,
+  .atomicat-container-967ee2a > .a-o-cont > .a-cont {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    width: 100% !important;
+  }
+
+  .atomicat-container-64c5027,
+  .atomicat-container-d8eba31,
+  .atomicat-container-9b49d82,
+  .atomicat-container-24cc27c {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* -------------------------------------------------
+     BONUS CARDS SECTION (OVERRIDE 500PX BUG & STACK)
+  ------------------------------------------------- */
+  .atomicat-container-19653c0 > .a-o-cont {
+    padding: 24px 12px !important;
+  }
+
+  .atomicat-heading-title-bea4525 h3 {
+    font-size: clamp(1.2rem, 4.8vw, 1.55rem) !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* Reset the 500px fixed width bug and stack the bonus pairs */
+  .a-b-cont .atomicat-container-2cd83a3.a-b-o-cont,
+  .a-b-cont .atomicat-container-33e8962.a-b-o-cont,
+  .a-b-cont .atomicat-container-6e115b2.a-b-o-cont {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 16px 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .atomicat-container-2cd83a3 > .a-o-cont > .a-cont,
+  .atomicat-container-33e8962 > .a-o-cont > .a-cont,
+  .atomicat-container-6e115b2 > .a-o-cont > .a-cont {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .a-c-cont-c973e15, .a-c-cont-e750aca,
+  .a-c-cont-1fb15c7, .a-c-cont-fa9051b,
+  .a-c-cont-c3d717a, .a-c-cont-0d1d71b {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .a-c-cont-c973e15 > .a-e-cont, .a-c-cont-e750aca > .a-e-cont,
+  .a-c-cont-1fb15c7 > .a-e-cont, .a-c-cont-fa9051b > .a-e-cont,
+  .a-c-cont-c3d717a > .a-e-cont, .a-c-cont-0d1d71b > .a-e-cont {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .a-img-ele-c973e15 img, .a-img-ele-e750aca img,
+  .a-img-ele-1fb15c7 img, .a-img-ele-fa9051b img,
+  .a-img-ele-c3d717a img, .a-img-ele-0d1d71b img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    border-radius: 18px !important;
+    box-shadow: 0 6px 20px -3px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  /* -------------------------------------------------
+     COMPARISON WIDE BANNERS (Stack Vertically)
+  ------------------------------------------------- */
+  .atomicat-container-a6ea61b > .a-o-cont > .a-cont,
+  .atomicat-container-765b9dc > .a-o-cont > .a-cont {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    width: 100% !important;
+  }
+
+  .atomicat-container-1502162,
+  .atomicat-container-0234c9c,
+  .atomicat-container-fc65a0a,
+  .atomicat-container-a7b821c {
+    width: 100% !important;
+    margin: 0 !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
+  }
+
+  .a-img-ele-055f5f9 img,
+  .a-img-ele-1aca172 img,
+  .a-img-ele-9595d91 img,
+  .a-img-ele-21fe217 img {
+    width: 100% !important;
+    border-radius: 18px !important;
+  }
+
+  /* -------------------------------------------------
+     "CHI HA IDEATO QUESTO METODO" (FIX 601PX BUG)
+  ------------------------------------------------- */
+  .atomicat-container-7027547 > .a-o-cont {
+    padding: 24px 12px !important;
+  }
+
+  .atomicat-container-7027547 > .a-o-cont > .a-cont {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  .atomicat-container-732d092 {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .a-b-cont .atomicat-container-2526eea.a-b-o-cont {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* -------------------------------------------------
+     "SAI GIÀ DI COSA HA BISOGNO" (FIX 500PX BUG)
+  ------------------------------------------------- */
+  .atomicat-container-49c6f3c > .a-o-cont {
+    padding: 24px 12px !important;
+  }
+
+  .a-b-cont .atomicat-container-f777c14.a-b-o-cont {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 20px 14px !important;
+  }
+
+  /* -------------------------------------------------
+     GUARANTEE BADGE (Stack neatly)
+  ------------------------------------------------- */
+  .atomicat-container-8b62713 > .a-o-cont {
+    padding: 24px 12px !important;
+  }
+
+  .a-b-cont .atomicat-container-1505457.a-b-o-cont {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 20px !important;
+    padding: 22px 16px !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06) !important;
+  }
+
+  .atomicat-container-1505457 > .a-o-cont > .a-cont {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 14px !important;
+    width: 100% !important;
+  }
+
+  /* -------------------------------------------------
+     "DUE STRADE" (Stack Red & Green Cards)
+  ------------------------------------------------- */
+  .atomicat-container-6bd9f89 > .a-o-cont {
+    padding: 24px 12px !important;
+  }
+
+  .atomicat-container-a345fc9 > .a-o-cont > .a-cont {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    width: 100% !important;
+  }
+
+  .a-b-cont .atomicat-container-33eab70.a-b-o-cont,
+  .a-b-cont .atomicat-container-e91c267.a-b-o-cont {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 18px !important;
+    padding: 18px 14px !important;
+  }
+
+  /* -------------------------------------------------
+     TESTIMONIALS
+  ------------------------------------------------- */
+  .atomicat-container-a5e2ce6 > .a-o-cont > .a-cont {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  .atomicat-container-460acd2,
+  .atomicat-container-79cd27c {
+    width: 100% !important;
+    border-radius: 16px !important;
+    padding: 16px 14px !important;
+    margin: 0 !important;
+  }
+
+  /* -------------------------------------------------
+     OFFERTA SECTION (Flawless on iPhone SE & 16 Pro Max)
+  ------------------------------------------------- */
+  #offerta, 
+  .atomicat-container-4868b0f {
+    padding: 28px 14px !important;
+    border-radius: 24px !important;
+    margin-top: 24px !important;
+    margin-bottom: 24px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Reset 690px mockup container bug */
+  .a-b-cont .atomicat-container-7552e3e.a-b-o-cont {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  .atomicat-element-container-62a91ff,
+  .a-img-ele-62a91ff {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  .a-img-ele-62a91ff img {
+    width: 100% !important;
+    max-width: 380px !important;
+    margin: 0 auto !important;
+    height: auto !important;
+  }
+
+  #offerta .atomicat-heading-title-3ec6468 h3,
+  #offerta .atomicat-text-3ec6468 h3 {
+    font-size: clamp(1.05rem, 4vw, 1.25rem) !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+  }
+
+  /* Items breakdown list */
+  #offerta .atomicat-container-1f5bdec {
+    gap: 10px !important;
+    margin: 18px 0 !important;
+    width: 100% !important;
+  }
+
+  #offerta .a-c-cont-79e3499,
+  #offerta .a-c-cont-fb79da7,
+  #offerta .a-c-cont-5733e0c,
+  #offerta .a-c-cont-bd2ac2e,
+  #offerta .a-c-cont-78b58c6 {
+    padding: 12px 12px !important;
+    border-radius: 12px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  #offerta .atomicat-heading-title-79e3499,
+  #offerta .atomicat-heading-title-fb79da7,
+  #offerta .atomicat-heading-title-5733e0c,
+  #offerta .atomicat-heading-title-bd2ac2e,
+  #offerta .atomicat-heading-title-78b58c6,
+  #offerta .atomicat-heading-title-79e3499 *,
+  #offerta .atomicat-heading-title-fb79da7 *,
+  #offerta .atomicat-heading-title-5733e0c *,
+  #offerta .atomicat-heading-title-bd2ac2e *,
+  #offerta .atomicat-heading-title-78b58c6 * {
+    font-size: clamp(0.85rem, 3.4vw, 0.98rem) !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Price tag scaling (clamp prevents overflowing 375px screens) */
+  #offerta .atomicat-heading-title-3e7a759 h3,
+  #offerta .atomicat-text-3e7a759 h3 {
+    font-size: clamp(2.8rem, 12vw, 3.8rem) !important;
+    line-height: 1.05 !important;
+    text-align: center !important;
+    margin: 8px 0 !important;
+  }
+
+  #offerta .atomicat-heading-title-fcc1184 h3 {
+    font-size: clamp(0.92rem, 3.5vw, 1.05rem) !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+    margin-bottom: 20px !important;
+  }
+
+  #offerta .atomicat-checkout-button {
+    font-size: clamp(0.95rem, 4vw, 1.15rem) !important;
+    padding: 18px 16px !important;
+    min-height: 58px !important;
+    width: 100% !important;
+  }
+
+  /* -------------------------------------------------
+     FAQ ACCORDION ON IPHONE
+  ------------------------------------------------- */
+  .atomicat-container-eea370e > .a-o-cont {
+    padding: 24px 12px !important;
+  }
+
+  .atomicat-heading-title-58f1272 h3 {
+    font-size: clamp(1.2rem, 4.8vw, 1.55rem) !important;
+    text-align: center !important;
+    margin-bottom: 16px !important;
+  }
+
+  .a-ac-c {
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .a-ac-i {
+    border-radius: 14px !important;
+    overflow: hidden !important;
+  }
+
+  .a-ac-t {
+    padding: 16px 14px !important;
+    font-size: 0.98rem !important;
+    line-height: 1.35 !important;
+  }
+
+  .a-ac-d {
+    padding: 14px 14px !important;
+    font-size: 0.92rem !important;
+    line-height: 1.6 !important;
+  }
+
+  /* -------------------------------------------------
+     FOOTER / SAFE AREA ON IPHONE
+  ------------------------------------------------- */
+  footer,
+  .a-b-cont:last-child {
+    padding-bottom: max(28px, env(safe-area-inset-bottom, 28px)) !important;
+  }
+}
+
+/* 3. Ultra-compact iPhone SE / 5 / Mini Viewports (<= 380px) */
+@media screen and (max-width: 380px) {
+  .a-btn, 
+  .atomicat-checkout-button, 
+  .atomicat-anchor-button {
+    font-size: 0.82rem !important;
+    padding: 14px 10px !important;
+  }
+
+  #offerta .atomicat-checkout-button {
+    font-size: 0.92rem !important;
+    padding: 16px 10px !important;
+  }
+
+  #offerta .atomicat-heading-title-3e7a759 h3 {
+    font-size: 2.7rem !important;
+  }
+
+  .atomicat-heading-title-877ff91 h3,
+  .atomicat-heading-title-1bdfdfa h3 {
+    font-size: 1.1rem !important;
+  }
+}

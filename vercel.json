@@ -2,6 +2,14 @@
   "cleanUrls": true,
   "rewrites": [
     {
+      "source": "/interpretareperevolvere",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/interpretareperevolvere/images/(.*)",
+      "destination": "/images/$1"
+    },
+    {
       "source": "/download",
       "destination": "/download/index.html"
     },
